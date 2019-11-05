@@ -3,16 +3,16 @@ services:
   - docker
 
 before_install:
-  - docker build -t numery09/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t numery/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run numery09/react-test npm test -- --coverage
+  - docker run numery/react-test npm test -- --coverage
 
 after_success: 
-  - docker build -t numery09/multi-client ./client 
-  - docker build -t numery09/multi-nginx ./nginx
-  - docker build -t numery09/multi-server ./server
-  - docker build -t numery09/multi-worker ./worker
+  - docker build -t numery/multi-client ./client 
+  - docker build -t numery/multi-nginx ./nginx
+  - docker build -t numery/multi-server ./server
+  - docker build -t numery/multi-worker ./worker
   # Log in to docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images amd push those to DockerHub
