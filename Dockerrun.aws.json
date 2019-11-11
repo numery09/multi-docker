@@ -6,21 +6,21 @@
             "image": "numery/multi-client",
             "hostname" : "client",
             "essential": false,
-            "memomy" : 128          
+            "memory" : 128
         },
         {
             "name": "server",
             "image": "numery/multi-server",
             "hostname" : "api",
             "essential": false,
-            "memomy" : 128
+            "memory" : 128
         },
         {
             "name": "worker",
             "image": "numery/multi-worker",
             "hostname" : "worker",
             "essential": false,            
-            "memomy" : 128
+            "memory" : 128
         },
         {
             "name": "nginx",
@@ -34,7 +34,7 @@
                 }
             ],
             "links": ["client", "server"],
-            "memomy" : 128         
+            "memory" : 128         
         }
     ]
 }
